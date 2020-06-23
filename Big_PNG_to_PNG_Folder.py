@@ -28,7 +28,7 @@ def folderConverter(input_folder_path, output_folder_path):
     files = [f for f in os.listdir(input_folder_path) if os.path.isfile(input_folder_path + f)]
     n = len(files)
     for j, f in enumerate(files):
-        print("Progress: Image " + str(j) + " / " + str(n))
+        print("Progress: Video " + str(j) + " / " + str(n))
         if not(os.path.exists(output_folder_path + str(j) + "/")):
             os.mkdir(output_folder_path + str(j) + "/")
         bigIMGtoFolder(input_folder_path + f, output_folder_path + str(j) + "/")
