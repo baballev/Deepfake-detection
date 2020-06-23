@@ -5,8 +5,8 @@ import shutil as sh
 import numpy as np
 
 # Number of desired samples
-fake_nb = 600
-real_nb = 900
+fake_nb = 100
+real_nb = 150
 
 # Number of subfolders available
 real_video_nb = 512
@@ -14,12 +14,12 @@ fake_video_nb = 227
 
 # Absolute Path for input and output folders, and relative path classes' subfolder
 input_path = 'E:/Programmation/Python/PAF 2020/deepfake2/dataset-paf/v1/train/'
-output_path = 'E:/Programmation/Python/PAF 2020/deepfake2/dataset-paf/v0/train/'
+output_path = 'E:/Programmation/Python/PAF 2020/deepfake2/dataset-paf/v0/test/'
 real_subfolder_name = "true/"
 fake_subfolder_name = "fake/"
 
 
-np.random.seed(678)
+np.random.seed(444)
 
 # Choose random video to choose from
 rd1 = np.random.randint(real_video_nb, size=real_nb)
@@ -41,12 +41,16 @@ for i, index in enumerate(rd1):
     if i%100 == 99:
         print("Real images: " + str(i) + " / " + str(real_nb))
 
+print("Real images: Done")
+
 ## Fake class
 for i, index in enumerate(rd2):
 
     file_list = os.listdir(input_path + fake_subfolder_name + str(index) + "/")
     r = int(np.random.randint(len(file_list), size=1))
     sh.copyfile(input_path + fake_subfolder_name + str(index) + "/" + file_list[r],
-    output_path + "fake_subfolder_name + str(i) + ".png")
+    output_path + fake_subfolder_name + str(i) + ".png")
     if i%100 == 99:
         print("Fake images: " + str(i) + " / " + str(fake_nb))
+
+print("Fake images: Done")
