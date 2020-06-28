@@ -20,7 +20,7 @@ id10001#DtdEYdViWdw#001613#001802.mp4-id10903#MsJKfBcIHrI#005322#005464.mp4
 
 fake_png_path = 'E:/Programmation/Python/PAF 2020/first-order-model/checkpoint/animation/png/'
 dataset_video_path = 'E:/Programmation/Python/PAF 2020/first-order-model/data/vox-png/train/'
-move_to_path = 'E:/Programmation/Python/PAF 2020/first-order-model/data/vox-png/used_for_fake-train/'
+move_to_path = 'E:/Programmation/Python/PAF 2020/first-order-model/data/vox-png/used_for_fake-eval/'
 
 files = os.listdir(fake_png_path)
 n = len(files)

@@ -2,7 +2,7 @@ from __future__ import print_function
 import os
 import shutil as sh
 
-dataset_video_path = 'E:/Programmation/Python/PAF 2020/first-order-model/data/vox-png/train/'
+dataset_video_path = 'E:/Programmation/Python/PAF 2020/first-order-model/data/vox-png/test/'
 corrupted_dump = 'E:/Programmation/Python/PAF 2020/first-order-model/data/vox-png/corrupted/'
 
 def isFileCorrupted(path):

@@ -6,9 +6,11 @@ import torchvision
 import torchvision.transforms as transforms
 import matplotlib.pyplot as plt
 import numpy as np
+import os
 
 ## GPU if available
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+
 
 ## NN
 class Classifier(nn.Module):
@@ -16,7 +18,7 @@ class Classifier(nn.Module):
     def __init__(self):
         super(Classifier, self).__init__()
 
-        self.conv1 = nn.Conv2d(3, 10, 5) # IN: [256,256,3] OUT: [252,252,10]
+        self.conv1 = nn.Conv2d(3, 9, 5) # IN: [256,256,3] OUT: [252,252,10]
         self.conv2 = nn.Conv2d(10, 24, 3) # IN: [126,126,10] OUT: [124,124,24]
         self.conv3 = nn.Conv2d(24, 32, 3) # IN: [62,62,24] OUT: [60,60,32]
 
@@ -37,8 +39,15 @@ class Classifier(nn.Module):
         x = F.relu(self.fc1(x))
         x = F.relu(self.fc2(x))
         x = F.relu(self.fc3(x))
-        x = F.softmax(self.fc4(x), dim=1)
+        x = self.fc4(x)
         return x
+
+def isFileNotCorrupted(path):
+
+    return not(os.stat(path).st_size <= 50) # If file size is inferior to 50 bytes, prune it
+
+
+
 
 
 ## Loading dataset
@@ -47,7 +56,7 @@ test_path = 'E:/Programmation/Python/PAF 2020/deepfake2/dataset-paf/v0/test/'
 
 transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
 
-trainset = torchvision.datasets.ImageFolder(train_path, transform=transform)
+trainset = torchvision.datasets.ImageFolder(train_path, transform=transform, is_valid_file=isFileNotCorrupted)
 
 trainloader = torch.utils.data.DataLoader(trainset, batch_size=4, shuffle=True, num_workers=4)
 
@@ -113,17 +122,6 @@ with torch.no_grad():
         correct += (predicted == label).sum().item()
 
 print("Accuracy on 250 images: " + str(100*(correct/total)) + "%.")
-
-
-
-
-
-
-
-
-
-
-
 
 
 

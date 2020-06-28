@@ -34,5 +34,5 @@ def folderConverter(input_folder_path, output_folder_path):
         bigIMGtoFolder(input_folder_path + f, output_folder_path + str(j) + "/")
 
 
-folderConverter("E:/Programmation/Python/PAF 2020/first-order-model/checkpoint/animation_test2_226images_over_512vids/png/",
-"E:/Programmation/Python/PAF 2020/deepfake2/test/")
+folderConverter("E:/Programmation/Python/PAF 2020/first-order-model/checkpoint/animation_eval_800vid/png/",
+"E:/Programmation/Python/PAF 2020/deepfake2/dataset-paf/v2/eval/fake/")
