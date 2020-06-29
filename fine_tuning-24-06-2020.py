@@ -25,7 +25,7 @@ def isFileNotCorrupted(path):
 train_path = 'E:/Programmation/Python/PAF 2020/deepfake2/dataset-paf/tmp/train/'
 test_path = 'E:/Programmation/Python/PAF 2020/deepfake2/dataset-paf/tmp/test/'
 
-transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
+transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])])
 
 trainset = torchvision.datasets.ImageFolder(train_path, transform=transform, is_valid_file=isFileNotCorrupted)
 trainloader = torch.utils.data.DataLoader(trainset, batch_size=4, shuffle=True, num_workers=4)
@@ -87,8 +87,6 @@ def train_model(model, loss_function, optimizer, scheduler, epochs_nb):
             # Verbose 3
             epoch_loss = running_loss / test_size
             epoch_acc = running_corrects / test_size
-            print(running_corrects)
-            print(test_size)
             print('Validation Loss: {:.4f} Acc: {:.4f}'.format(epoch_loss, epoch_acc))
 
         # Copy the model if it gets better
@@ -137,9 +135,6 @@ train_model(classifier, loss_function, optimizer, exp_lr_scheduler, 5)
 
 makeCheckpoint(classifier, save_path)
 
-classifier = loadCheckpoint(load_path)
-# TODO: Fine-Tune instead of training the whole network
-# ToDo: Enlarge the dataset, especially fake class
 
 
 
