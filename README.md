@@ -7,8 +7,14 @@ This repository propose a deeplearning solution to identifiy deepfake videos. We
 
 ## First Method: Image sampling over the video
 Our first solution consisted in taking random frames from the video and classify them using traditional CNNs. 
-The dataset we used was composed of 6000 .png images extracted from real videos from the VoxCeleb dataset as well as fake generated videos using 2019 state of the art first-order-model.
-Using Residual Networks, we achieved a validation accuracy of 97%
+The dataset we used was composed of 6000 .png images extracted from real and generated/fake videos using the [VoxCeleb dataset](http://www.robots.ox.ac.uk/~vgg/data/voxceleb/).
+![Images dataset](sup-mat/image_dataset_repartition.PNG)
+
+Using Residual Networks, we achieved a **97.0% validation accuracy%**.
 
 
-## Second Method: CNN as input of RNN 
+## Second Method: CNN as input of RNN
+For the final solution, we combined a CNN with 3 layers of LSTM cells. The loss was calculated using only the last output of the LSTM. 
+![Architecture of the final solution](sup-mat/architecture.png)
+
+The dataset we used was composed of real and fake videos from [VoxCeleb dataset](http://www.robots.ox.ac.uk/~vgg/data/voxceleb/). We generated the fake videos using state of the art 2019 [first-order-model](https://github.com/AliaksandrSiarohin/first-order-model).
