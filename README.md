@@ -1,7 +1,7 @@
 # Deepfake detection - PAF 2020
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ![Télécom Paris](sup-mat/telecom.png)
 
-This project was realized as part of the 2020 PAF in Télécom Paris by Arthur Tran-Lambert, Mona Mokart and Vincent Josse, and supervised by Stéphane Safin, computer vision researcher at Télécom Paris.
+This project was realized as part of the 2020 PAF in Télécom Paris by Arthur Tran-Lambert, Mona Mokart and Vincent Josse, and supervised by Stéphane Lathuilière, computer vision researcher at Télécom Paris.
 
 
 
