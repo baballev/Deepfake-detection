@@ -14,8 +14,8 @@ from PIL import Image
 import glob # UNIX style path expansion
 """
 Notes on data loading in this script:
-    The data set we used is composed of videos represented as folders containing ordered .png images.
 
+The data set we used is composed of videos represented as folders containing ordered .png images.
 This is an example of structure that would work:
 
     .../dataset-path/train/
