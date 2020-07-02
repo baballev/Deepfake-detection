@@ -18,7 +18,7 @@ class Classifier(nn.Module):
     def __init__(self):
         super(Classifier, self).__init__()
 
-        self.conv1 = nn.Conv2d(3, 9, 5) # IN: [256,256,3] OUT: [252,252,10]
+        self.conv1 = nn.Conv2d(3, 10, 5) # IN: [256,256,3] OUT: [252,252,10]
         self.conv2 = nn.Conv2d(10, 24, 3) # IN: [126,126,10] OUT: [124,124,24]
         self.conv3 = nn.Conv2d(24, 32, 3) # IN: [62,62,24] OUT: [60,60,32]
 

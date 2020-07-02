@@ -249,7 +249,7 @@ if __name__ == '__main__':
     model = models.resnet101(pretrained=False) # Déclaratin du modèle
     num_features = model.fc.in_features # changer la dernière couche comme pour l'entrainement
     model.fc = nn.Linear(num_features, 2) #
-    load_path = 'E:/Programmation/Python/PAF 2020/deepfake2/weights/24-06-2020-ResNet101-5epochs-acc=0.98.pth'
+    load_path = 'E:/Programmation/Python/PAF 2020/deepfake2/weights/24-06-2020-ResNet101-5epochs.pth'
     model.load_state_dict(torch.load(load_path)) # Charger les poids entrainés dans le modèle
 
     grad_cam = GradCam(model=model, feature_module=model.layer4, \
@@ -262,7 +262,6 @@ if __name__ == '__main__':
     ## J'ai changé la taille des images car j'ai entrainé sur du 256 256
     img = np.float32(cv2.resize(img, (256, 256))) / 255
     input = preprocess_image(img)
-
 
     # If None, returns the map for the highest scoring category.
     # Otherwise, targets the requested index.

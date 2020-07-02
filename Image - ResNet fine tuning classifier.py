@@ -57,7 +57,7 @@ def train_model(model, loss_function, optimizer, scheduler, epochs_nb):
         for i, data in enumerate(trainloader):
             input, label = data[0].to(device), data[1].to(device)
             optimizer.zero_grad()
-            output = classifier(input)
+            output = model(input)
             loss = loss_function(output, label)
             loss.backward()
             optimizer.step()
@@ -122,8 +122,8 @@ print(classifier)
 classifier.to(device)
 
 loss_function = nn.CrossEntropyLoss()
-optimizer = optim.SGD(classifier.parameters(), lr=0.001, momentum=0.9)
-exp_lr_scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=3, gamma=0.1) # Multiply learning rate by 0.1 every 3 epochs
+optimizer = optim.Adam(classifier.parameters())
+#exp_lr_scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=3, gamma=0.1) # Multiply learning rate by 0.1 every 3 epochs
 
 # Summary
 print(classifier)
