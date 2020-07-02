@@ -37,7 +37,7 @@ We used sorted .png folders as input in our code to reduce preprocessing time bu
 
 ![Architecture of the final solution](sup-mat/architecture.png)
 
-The dataset we used was composed of real and fake videos from [VoxCeleb dataset](http://www.robots.ox.ac.uk/~vgg/data/voxceleb/). We generated the fake videos using state of the art 2019 [first-order-model](https://github.com/AliaksandrSiarohin/first-order-model).
+The dataset we used was composed of real and fake videos from [VoxCeleb dataset](http://www.robots.ox.ac.uk/~vgg/data/voxceleb/). We generated the fake videos using state of the art 2019 [first-order-model](https://github.com/AliaksandrSiarohin/first-order-model). Globally, the dataset is about 120 GB and it contains 7500 videos.
 
 ![Video dataset](sup-mat/video_dataset.png)
 
@@ -50,4 +50,5 @@ Using our recurrent architecture from the Second method, we obtained these accur
 Please note that the parameters and the structure in the above architecture figure are those that were used to achieve our best evaluation accuracy in the previous table.
 
 Our weights with the best performance can be downloaded here: [Weights](https://drive.google.com/file/d/1WnJ96K3lsuu2RmwfM9kWCd-Bva9sf0LZ/view?usp=sharing)
+
 Use pytorch state_dict loader to perform predictions with these weights.
