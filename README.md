@@ -23,5 +23,6 @@ The dataset we used was composed of real and fake videos from [VoxCeleb dataset]
 
 
 ## Results:
-Using our recurrent architecture from the Second method, we obtained these accuracies as listed in this table:
+Using our recurrent architecture from the Second method, we obtained these accuracies:
 ![Accuracy table](sup-mat/accuracy table.PNG)
+Please note that the parameters and the structure in the above architecture figure are those that were used to achieve our best evaluation accuracy.
