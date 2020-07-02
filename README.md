@@ -52,3 +52,4 @@ Please note that the parameters and the structure in the above architecture figu
 Our weights with the best performance can be downloaded here: [Weights](https://drive.google.com/file/d/1WnJ96K3lsuu2RmwfM9kWCd-Bva9sf0LZ/view?usp=sharing)
 
 Use pytorch state_dict loader to perform predictions with these weights.
+
