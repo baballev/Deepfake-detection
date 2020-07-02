@@ -131,7 +131,6 @@ class VideoDataset(torch.utils.data.Dataset):
     def __len__(self):
         return self.length
 
-
 ### Loading datasets
 transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])])
 batch_size=4
@@ -224,7 +223,6 @@ def trainModel(model, loss_function, optimizer, epochs_nb):
                 print("Loss over last 100 batches: " + str(verbose_loss/100))
                 verbose_loss = 0.0
 
-
         # Verbose 2
         epoch_loss = running_loss / train_size
         epoch_acc = running_corrects / train_size
@@ -283,37 +281,3 @@ def makeCheckpoint(model, save_path):
 
 save_path = './weights/ONLY_LAST_OUTPUT-ResNet34&3LSTM(600)-6epochs.pth'
 makeCheckpoint(rnn, save_path)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
